@@ -53,13 +53,13 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          echo $PAT | docker login ghcr.io -u yanpingFANG --password-stdin
+          echo $PAT | docker login ghcr.io -u yanpingfANG --password-stdin
           docker build --build-arg APP_VERSION="$APP_VERSION" -t $CONTAINER_COMMIT_IMAGE  -t $CONTAINER_LATEST_IMAGE .
           docker push $CONTAINER_COMMIT_IMAGE
           docker push $CONTAINER_LATEST_IMAGE
         env:
           PAT: ${{ secrets.DOJO }}
           APP_VERSION: ${{ github.sha }}
-          CONTAINER_REGISTRY: ghcr.io/yanpingFANG/github-actions-dojo
-          CONTAINER_COMMIT_IMAGE: ghcr.io/yanpingFANG/github-actions-dojo:${{ github.sha }}
-          CONTAINER_LATEST_IMAGE: ghcr.io/yanpingFANG/github-actions-dojo:latest
+          CONTAINER_REGISTRY: ghcr.io/yanpingfANG/github-actions-dojo
+          CONTAINER_COMMIT_IMAGE: ghcr.io/yanpingfANG/github-actions-dojo:${{ github.sha }}
+          CONTAINER_LATEST_IMAGE: ghcr.io/yanpingfANG/github-actions-dojo:latest
