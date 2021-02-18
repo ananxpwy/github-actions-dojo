@@ -24,8 +24,8 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - run : |
           bandit app.py
 
@@ -38,8 +38,8 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - run : |
           python -m pytest
 
