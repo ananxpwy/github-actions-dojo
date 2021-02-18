@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          echo $PAT | docker login ghcr.io -u <github_username> --password-stdin
+          echo $PAT | docker login ghcr.io -u ananxpwy --password-stdin
           docker build --build-arg APP_VERSION="$APP_VERSION" -t $CONTAINER_COMMIT_IMAGE  -t $CONTAINER_LATEST_IMAGE .
           docker push $CONTAINER_COMMIT_IMAGE
           docker push $CONTAINER_LATEST_IMAGE
